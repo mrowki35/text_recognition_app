@@ -1,47 +1,52 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QStackedWidget
+from PyQt5.QtCore import Qt, QEvent, QPoint
+from PyQt5.QtGui import QDragEnterEvent, QDropEvent, QMouseEvent, QPainter, QColor, QPolygon
 from filebase_class import FilesBase
-from PyQt5.QtGui import QDragEnterEvent, QDropEvent
-#from main import Text_recognition_handling
+from text_recognition_function import Text_recognition_handling
+from firstscreen_class import FileDropWindow
+from second_screen_class import SecondScreen
+from filebase_class import FilesBase
 
-class FileDropWindow(QMainWindow):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.storage = FilesBase()
         self.setWindowTitle("Text recognition app")
         self.setGeometry(100, 100, 300, 200)
 
-        central_widget = QWidget(self)
-        self.setCentralWidget(central_widget)
-        layout = QVBoxLayout(central_widget)
+        storage=FilesBase()
 
-        self.label = QLabel("Drop your files here", self)
-        self.label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(self.label)
+        self.stacked_widget = QStackedWidget(self)
+        self.setCentralWidget(self.stacked_widget)
 
-        self.submit_button = QPushButton("Submit", self)
-        layout.addWidget(self.submit_button)
-        self.submit_button.clicked.connect(self.submit_action)
+        self.second_page = SecondScreen(self,self.switch_to_main_screen, storage)
+        self.stacked_widget.addWidget(self.second_page)
 
-        central_widget.setLayout(layout)
-        self.show()
+        self.first_page = FileDropWindow(self,self.switch_to_second_screen,self.second_page, storage)
+        self.stacked_widget.addWidget(self.first_page)
 
-    def dragEnterEvent(self, event: QDragEnterEvent):
-        if event.mimeData().hasUrls():
-            event.acceptProposedAction()
+        self.show_first_page()
 
-    def dropEvent(self, event: QDropEvent):
-        if event.mimeData().hasUrls():
-            urls = event.mimeData().urls()
-            file_path = urls[0].toLocalFile()
-            self.storage.list_of_files.append(file_path)
-            print("File dropped:", file_path)
+    def show_first_page(self):
+        self.stacked_widget.setCurrentWidget(self.first_page)
 
-    def submit_action(self):
-        print("Submit button clicked")
+    def show_second_page(self):
+        self.stacked_widget.setCurrentWidget(self.second_page)
+
+
+    def switch_to_second_screen(self):
+       # print("Switching to the second screen")
+        self.show_second_page()
+
+    def switch_to_main_screen(self):
+        #print("Switching to the main screen")
+        self.show_first_page()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = FileDropWindow()
+    window = MainWindow()
+    window.show()
+    window.setAcceptDrops(True)
     sys.exit(app.exec_())
+    
