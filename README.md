@@ -13,7 +13,7 @@ This is a simple application designed to get text included in images. It is base
 
 ---
 ## How it works
-After running a Python script a small window app will appear. The only thing you need to do next is to drop your files in a window and press submit. The text will appear in "where_text_goes.txt" file.
+After running a Python script ("GUI_test.py" file) a small window app will appear. The only thing you need to do next is to drop your files in a window and press submit. The text will appear in "where_text_goes.txt" file.
 
 ---
 ## Settings
