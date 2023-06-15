@@ -18,6 +18,7 @@ After running a Python script ("GUI_test.py" file) a small window app will appea
 
 ---
 ## Settings
+
 ### Language
 Choose in which language the text is in a picture is (default=English)
 ### Append/Write
