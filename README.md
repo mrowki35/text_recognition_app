@@ -1,6 +1,7 @@
 # text_recognition_app
 
 This is a simple application designed to get text included in images. It is based on Tesseract-OCR.
+
 ---
 # Table of contents
 1. [How it works](#how-it-works)
