@@ -63,6 +63,12 @@ print(tesserocr. file_to_text('sample.jpg’))
 
 ---
 ## Files description
+### GUI_test.py
+File you should run, main 
+### arrowbutton_class.py
+File with custom arrow button widget
+### 
+* create executable
 
 ---
 ## TODO
