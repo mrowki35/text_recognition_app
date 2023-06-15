@@ -36,7 +36,7 @@ After running a Python script a small window app will appear. The only thing you
 * after installing the tess_data copy the path to a folder and place it in the "path" in "text_recognition_function.py"
 
 ---
-##Files descrption
+## Files descrption
 
 ---
 ## TODO
