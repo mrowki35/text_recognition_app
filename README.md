@@ -22,6 +22,20 @@ After running a Python script ("GUI_test.py" file) a small window app will appea
 ---
 ## Example Input/Output
 
+![Example](sample.jpg)
+
+```py
+import tesserocr
+from PIL import Image
+
+print(tesserocr.tesseract_version()) # print tesseract-ocr version
+print(tesserocr.get_languages()) # prints tessdata path and list of available languages
+
+image = Inage.open(’sample.jpg’)
+print(tesserocr. inage_to_text(inage)) # print ocr text from inage
+# or
+
+print(tesserocr. file_to_text('sample.jpg’))```
 
 ---
 ## Libraries Used
