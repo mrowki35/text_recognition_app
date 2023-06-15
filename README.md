@@ -35,7 +35,8 @@ image = Inage.open(’sample.jpg’)
 print(tesserocr. inage_to_text(inage)) # print ocr text from inage
 # or
 
-print(tesserocr. file_to_text('sample.jpg’))```
+print(tesserocr. file_to_text('sample.jpg’))
+```
 
 ---
 ## Libraries Used
