@@ -2,7 +2,7 @@ import cv2
 import tesserocr
 from PIL import Image
 
-def Text_recognition_handling(im_path, language='eng'):
+def Text_recognition_handling(im_path, language):
 # Path to the tessdata directory
     tessdata_dir = "path"
     image_path = im_path
