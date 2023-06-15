@@ -64,12 +64,27 @@ print(tesserocr. file_to_text('sample.jpg’))
 
 ---
 ## Files description
+
 ### GUI_test.py
 File you should run, main 
 ### arrowbutton_class.py
 File with custom arrow button widget
-### 
-* create executable
+### filebase_class.py
+File with class that handles correctness and storage of file's path
+### firstscreen_class.py
+File with main screen code
+### lang_list_support.py
+File with list of laungages
+### language_dict.py
+Dictionary that connects languages to their folder's names with data
+### second_screen_class.py
+File with settings screen code
+### support_dictionary.py
+Dictionary with append/write handling
+### text_recognition_function.py
+Tessearct-OCR API and running the actual text recognition
+### where_text_goes.txt
+That is where the recognized text goes
 
 ---
 ## TODO
