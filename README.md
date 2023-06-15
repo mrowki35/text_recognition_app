@@ -18,6 +18,16 @@ After running a Python script ("GUI_test.py" file) a small window app will appea
 
 ---
 ## Settings
+### Language
+Choose in which language the text is in a picture is (default=English)
+### Append/Write
+Choose if you want to ovewrite data in "where_text_goes.txt" file (default=Append)
+### List of files
+It is a list of files that text recognition will run.
+### Delete
+Deletes a name of a file from the list of files.
+### Delete all
+Deletes all file names in list of files.
 
 ---
 ## Example Input/Output
@@ -52,12 +62,12 @@ print(tesserocr. file_to_text('sample.jpg’))
 * after installing the tess_data copy the path to a folder and place it in the "path" in "text_recognition_function.py"
 
 ---
-## Files descrption
+## Files description
 
 ---
 ## TODO
-* add more websites
-* also I am preparing a version of the app that will be colecting data automatically, you will just need to paste a link or a screenshot with your fragrance. It will be pusblished soon
-* add fmale fragrance handling
+* add pdf handling
+* upgrade GUI
+* create executable
 
 ---
